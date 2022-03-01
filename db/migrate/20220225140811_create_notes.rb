@@ -6,7 +6,7 @@ class CreateNotes < ActiveRecord::Migration[7.0]
       t.string  :note_type, null: false,    default: "note"
       t.string  :color
       t.integer :user_id, null: false
-      t.boolean :clipped,  default: false
+      t.boolean :pinned,  default: false
       t.timestamps
     end
   end

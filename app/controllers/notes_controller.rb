@@ -67,7 +67,7 @@ class NotesController < ApplicationController
   private
 
     def note_params
-      params.require(:note).permit(:title,:content,:note_type,:color,:clipped)
+      params.require(:note).permit(:title,:content,:note_type,:color,:pinned)
     end
 
 end
