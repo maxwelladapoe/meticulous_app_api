@@ -13,9 +13,11 @@
 ActiveRecord::Schema[7.0].define(version: 2022_02_25_140811) do
   create_table "notes", force: :cascade do |t|
     t.string "title"
-    t.text "content"
-    t.string "type"
-    t.integer "user_id"
+    t.text "content", null: false
+    t.string "note_type", default: "note", null: false
+    t.string "color"
+    t.integer "user_id", null: false
+    t.boolean "pinned", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
