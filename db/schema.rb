@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_25_150710) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_02_134003) do
+  create_table "attachments", force: :cascade do |t|
+    t.string "name"
+    t.string "attachment_type"
+    t.integer "note_id", null: false
+    t.integer "user_id", null: false
+    t.string "size"
+    t.string "path", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["note_id"], name: "index_attachments_on_note_id"
+    t.index ["user_id"], name: "index_attachments_on_user_id"
+  end
+
   create_table "jwt_denylist", force: :cascade do |t|
     t.string "jti", null: false
     t.datetime "exp", null: false

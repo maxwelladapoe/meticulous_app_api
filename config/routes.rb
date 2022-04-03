@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/member-data', to: 'members#show'
 
   resources :notes
+  resources :attachments
 end

@@ -6,4 +6,8 @@ class User < ApplicationRecord
          jwt_revocation_strategy: JwtDenylist
   
   validates :email, uniqueness: true
+
+  #relations
+  has_many :notes
+  has_many :attachments
 end
